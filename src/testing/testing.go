@@ -890,7 +890,7 @@ func runTests(matchString func(pat, str string) (bool, error), tests []InternalT
 			common: common{
 				signal:  make(chan bool),
 				barrier: make(chan bool),
-				w:       os.Stdout,
+				w:       os.Stderr,
 				chatty:  *chatty,
 			},
 			context: ctx,
