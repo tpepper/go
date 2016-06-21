@@ -83,8 +83,8 @@ func TestVendorTest(t *testing.T) {
 	tg.setenv("GOPATH", filepath.Join(tg.pwd(), "testdata"))
 	tg.cd(filepath.Join(tg.pwd(), "testdata/src/vend/hello"))
 	tg.run("test", "-v")
-	tg.grepStdout("TestMsgInternal", "missing use in internal test")
-	tg.grepStdout("TestMsgExternal", "missing use in external test")
+	tg.grepStderr("TestMsgInternal", "missing use in internal test")
+	tg.grepStderr("TestMsgExternal", "missing use in external test")
 }
 
 func TestVendorInvalid(t *testing.T) {
